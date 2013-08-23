@@ -17,6 +17,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import "BTRClipView.h"
 
 // A NSScrollView subclass which uses an instance of BTRClipView
 // as the clip view instead of NSClipView.

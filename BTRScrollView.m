@@ -42,7 +42,7 @@
 
 - (BTRClipView *)clipView {
 	if ([self.contentView isKindOfClass:BTRClipView.class]) {
-		return self.contentView;
+		return (BTRClipView *)self.contentView;
 	}
 	
 	return nil;
