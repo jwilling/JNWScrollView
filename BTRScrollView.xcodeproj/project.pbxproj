@@ -10,8 +10,9 @@
 		ABCEDC4C17D03BCC0023B30C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEDC4B17D03BCC0023B30C /* Cocoa.framework */; };
 		ABCEDC5617D03BCC0023B30C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABCEDC5417D03BCC0023B30C /* InfoPlist.strings */; };
 		ABCEDC5A17D03BCC0023B30C /* BTRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC5917D03BCC0023B30C /* BTRScrollView.m */; };
-		ABCEDC7817D03C720023B30C /* BTRClipView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCEDC7617D03C720023B30C /* BTRClipView.h */; };
+		ABCEDC7817D03C720023B30C /* BTRClipView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCEDC7617D03C720023B30C /* BTRClipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABCEDC7917D03C720023B30C /* BTRClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC7717D03C720023B30C /* BTRClipView.m */; };
+		ABCEDC8617D0411D0023B30C /* BTRScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCEDC5817D03BCC0023B30C /* BTRScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABCEDC7817D03C720023B30C /* BTRClipView.h in Headers */,
+				ABCEDC8617D0411D0023B30C /* BTRScrollView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
