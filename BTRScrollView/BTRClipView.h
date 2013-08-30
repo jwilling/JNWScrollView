@@ -1,5 +1,6 @@
 /*
- Copyright (c) 2013, Jonathan Willing. All rights reserved.
+ Created by Jonathan Willing on 8/28/13.
+ Copyright (c) 2013, ButterKit. All rights reserved.
  Licensed under the MIT license <http://opensource.org/licenses/MIT>
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
