@@ -17,10 +17,10 @@
  IN THE SOFTWARE.
  */
 
-#import "BTRScrollView.h"
-#import "BTRClipView.h"
+#import "JNWScrollView.h"
+#import "JNWClipView.h"
 
-@implementation BTRScrollView
+@implementation JNWScrollView
 
 #pragma mark Lifecycle
 
@@ -36,14 +36,14 @@
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	
-	if (![self.contentView isKindOfClass:BTRClipView.class]) {
+	if (![self.contentView isKindOfClass:JNWClipView.class]) {
 		[self swapClipView];
 	}
 }
 
-- (BTRClipView *)clipView {
-	if ([self.contentView isKindOfClass:BTRClipView.class]) {
-		return (BTRClipView *)self.contentView;
+- (JNWClipView *)clipView {
+	if ([self.contentView isKindOfClass:JNWClipView.class]) {
+		return (JNWClipView *)self.contentView;
 	}
 	
 	return nil;
@@ -54,7 +54,7 @@
 - (void)swapClipView {
 	self.wantsLayer = YES;
 	id documentView = self.documentView;
-	BTRClipView *clipView = [[BTRClipView alloc] initWithFrame:self.contentView.frame];
+	BTRClipView *clipView = [[JNWClipView alloc] initWithFrame:self.contentView.frame];
 	self.contentView = clipView;
 	self.documentView = documentView;
 }

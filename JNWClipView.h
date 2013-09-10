@@ -20,7 +20,7 @@
 #import <Cocoa/Cocoa.h>
 
 // A NSClipView subclass with a buttery -scrollToRect: animation.
-@interface BTRClipView : NSClipView
+@interface JNWClipView : NSClipView
 
 // Calls -scrollRectToVisible:, optionally animated.
 //

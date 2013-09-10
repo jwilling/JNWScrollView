@@ -18,16 +18,16 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import "BTRClipView.h"
+#import "JNWClipView.h"
 
-// A NSScrollView subclass which uses an instance of BTRClipView
+// A NSScrollView subclass which uses an instance of JNWClipView
 // as the clip view instead of NSClipView.
 //
 // Layer-backed by default.
-@interface BTRScrollView : NSScrollView
+@interface JNWScrollView : NSScrollView
 
 // Returns the scroll view's content view that is an instance of BTRClipView, or
 // nil if it does not exist.
-- (BTRClipView *)clipView;
+- (JNWClipView *)clipView;
 
 @end

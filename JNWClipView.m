@@ -17,12 +17,12 @@
  IN THE SOFTWARE.
  */
 
-#import "BTRClipView.h"
+#import "JNWClipView.h"
 
 // The default deceleration constant used for the ease-out curve in the animation.
-static const CGFloat BTRClipViewDecelerationRate = 0.78;
+static const CGFloat JNWClipViewDecelerationRate = 0.78;
 
-@interface BTRClipView ()
+@interface JNWClipView ()
 // Used to drive the animation through repeated callbacks.
 // A display link is used instead of a timer so that we don't get dropped frames and tearing.
 // Lazily created when needed, released in dealloc. Stopped automatically when scrolling is not occurring.
@@ -42,14 +42,14 @@ static const CGFloat BTRClipViewDecelerationRate = 0.78;
 @end
 
 
-@implementation BTRClipView
+@implementation JNWClipView
 
 - (instancetype)initWithFrame:(NSRect)frame {
 	self = [super initWithFrame:frame];
 	if (self == nil) return nil;
 	
 	self.wantsLayer = YES;
-	self.decelerationRate = BTRClipViewDecelerationRate;
+	self.decelerationRate = JNWClipViewDecelerationRate;
 	
 	return self;
 }
@@ -75,9 +75,9 @@ static const CGFloat BTRClipViewDecelerationRate = 0.78;
 
 #pragma mark Display link
 
-static CVReturn BTRScrollingCallback(CVDisplayLinkRef displayLink, const CVTimeStamp *now, const CVTimeStamp *outputTime, CVOptionFlags flagsIn, CVOptionFlags *flagsOut, void *displayLinkContext) {
+static CVReturn JNWScrollingCallback(CVDisplayLinkRef displayLink, const CVTimeStamp *now, const CVTimeStamp *outputTime, CVOptionFlags flagsIn, CVOptionFlags *flagsOut, void *displayLinkContext) {
 	@autoreleasepool {
-		BTRClipView *clipView = (__bridge id)displayLinkContext;
+		JNWClipView *clipView = (__bridge id)displayLinkContext;
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[clipView updateOrigin];
 		});
@@ -89,7 +89,7 @@ static CVReturn BTRScrollingCallback(CVDisplayLinkRef displayLink, const CVTimeS
 - (CVDisplayLinkRef)displayLink {
 	if (_displayLink == NULL) {
 		CVDisplayLinkCreateWithActiveCGDisplays(&_displayLink);
-		CVDisplayLinkSetOutputCallback(_displayLink, &BTRScrollingCallback, (__bridge void *)self);
+		CVDisplayLinkSetOutputCallback(_displayLink, &JNWScrollingCallback, (__bridge void *)self);
 		[self updateCVDisplay:nil];
 	}
 	
