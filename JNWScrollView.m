@@ -54,7 +54,7 @@
 - (void)swapClipView {
 	self.wantsLayer = YES;
 	id documentView = self.documentView;
-	BTRClipView *clipView = [[JNWClipView alloc] initWithFrame:self.contentView.frame];
+	JNWClipView *clipView = [[JNWClipView alloc] initWithFrame:self.contentView.frame];
 	self.contentView = clipView;
 	self.documentView = documentView;
 }
