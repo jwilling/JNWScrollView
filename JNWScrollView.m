@@ -49,6 +49,11 @@
 	return nil;
 }
 
+- (BOOL)drawsBackground
+{
+    return NO;
+}
+
 #pragma mark Clip view swapping
 
 - (void)swapClipView {
