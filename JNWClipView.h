@@ -22,6 +22,9 @@
 // A NSClipView subclass with a buttery -scrollToRect: animation.
 @interface JNWClipView : NSClipView
 
+/// Initializes a new JNWClipView and copies over the attributes of a specific clipView
+- (instancetype)initWithClipView:(NSClipView *)clipView;
+
 // Calls -scrollRectToVisible:, optionally animated.
 //
 // If animated, the animation will be performed with an ease-out timing function.

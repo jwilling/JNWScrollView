@@ -54,7 +54,7 @@
 - (void)swapClipView {
 	self.wantsLayer = YES;
 	id documentView = self.documentView;
-	JNWClipView *clipView = [[JNWClipView alloc] initWithFrame:self.contentView.frame];
+    JNWClipView *clipView = [[JNWClipView alloc] initWithClipView:self.contentView];
 	self.contentView = clipView;
 	self.documentView = documentView;
 }
