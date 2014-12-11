@@ -49,9 +49,22 @@
 	return nil;
 }
 
+- (void)setBackgroundColor:(NSColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    [self.contentView setBackgroundColor:backgroundColor];
+}
+
+- (void)setDrawsBackground:(BOOL)drawsBackground
+{
+    [super setDrawsBackground:drawsBackground];
+    [self.contentView setDrawsBackground:drawsBackground];
+}
+
 - (BOOL)drawsBackground
 {
-    return NO;
+    if (self.contentView.backgroundColor != nil && self.contentView.drawsBackground) return NO;
+    return [super drawsBackground];
 }
 
 #pragma mark Clip view swapping
