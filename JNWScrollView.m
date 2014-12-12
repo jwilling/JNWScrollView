@@ -49,20 +49,17 @@
 	return nil;
 }
 
-- (void)setBackgroundColor:(NSColor *)backgroundColor
-{
+- (void)setBackgroundColor:(NSColor *)backgroundColor {
     [super setBackgroundColor:backgroundColor];
     [self.contentView setBackgroundColor:backgroundColor];
 }
 
-- (void)setDrawsBackground:(BOOL)drawsBackground
-{
+- (void)setDrawsBackground:(BOOL)drawsBackground {
     [super setDrawsBackground:drawsBackground];
     [self.contentView setDrawsBackground:drawsBackground];
 }
 
-- (BOOL)drawsBackground
-{
+- (BOOL)drawsBackground {
     if (self.contentView.backgroundColor != nil && self.contentView.drawsBackground) return NO;
     return [super drawsBackground];
 }
