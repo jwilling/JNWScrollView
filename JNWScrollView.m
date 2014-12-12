@@ -49,12 +49,27 @@
 	return nil;
 }
 
+- (void)setBackgroundColor:(NSColor *)backgroundColor {
+    [super setBackgroundColor:backgroundColor];
+    [self.contentView setBackgroundColor:backgroundColor];
+}
+
+- (void)setDrawsBackground:(BOOL)drawsBackground {
+    [super setDrawsBackground:drawsBackground];
+    [self.contentView setDrawsBackground:drawsBackground];
+}
+
+- (BOOL)drawsBackground {
+    if (self.contentView.backgroundColor != nil && self.contentView.drawsBackground) return NO;
+    return [super drawsBackground];
+}
+
 #pragma mark Clip view swapping
 
 - (void)swapClipView {
 	self.wantsLayer = YES;
 	id documentView = self.documentView;
-	JNWClipView *clipView = [[JNWClipView alloc] initWithFrame:self.contentView.frame];
+    JNWClipView *clipView = [[JNWClipView alloc] initWithClipView:self.contentView];
 	self.contentView = clipView;
 	self.documentView = documentView;
 }
