@@ -45,7 +45,7 @@ static const CGFloat JNWClipViewDecelerationRate = 0.78;
 @implementation JNWClipView
 
 - (instancetype)initWithClipView:(NSClipView *)clipView {
-    self = [super initWithFrame:clipView.frame];
+    self = [self initWithFrame:clipView.frame];
     if (self == nil) return nil;
     
     self.backgroundColor = clipView.backgroundColor;
